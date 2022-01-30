@@ -37,7 +37,7 @@ class SongAdapter(mainActivity: MainActivity, songList: ArrayList<Song>) :BaseAd
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         //map to song layout
-        var songLay = songInf.inflate()
+        val songLay=songInf.inflate(R.layout.song, parent, false) as LinearLayout
         //get title and artist views
         val songView=songLay.findViewById<View>(R.id.befikre) as TextView
         val artistView=songLay.findViewById<View>(R.id.song_artist) as TextView
@@ -51,5 +51,5 @@ class SongAdapter(mainActivity: MainActivity, songList: ArrayList<Song>) :BaseAd
         return songLay
     }
 
-    val songLay=songInf.inflate(R.layout.song, parent, false) as LinearLayout
+
 }
